@@ -2,3 +2,19 @@ syntax="proto3";
 package poa.poamodule;
 
 option go_package="github.com/youngjun1714/sdk/x/poa/types";
+
+import "gogoproto/gogo.proto";
+import "poa/poa.proto";
+
+service Msg {
+    rpc SubmitApplication(MsgSubmitApplicationRequest) returns (MsgSubmitApplicationResponse);
+}
+
+message MsgSubmitApplicationRequest {
+    Validator Candidate = 1 [(gogoproto.moretags) = "yaml:\"from_address\""];
+}
+
+
+message MsgSubmitApplicationResponse {
+    
+}

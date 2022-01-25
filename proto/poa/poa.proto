@@ -1,0 +1,21 @@
+syntax= "proto3";
+package poa.poamodule;
+
+option go_package="github.com/youngjun1714/sdk/x/poa/types";
+
+import "gogoproto/gogo.proto";
+
+
+message Validator {
+    string OperatorAddress  = 1 [(gogoproto.moretags) = "yaml:\"operator_address\""];
+    string ConsensusPubkey  = 2 [(gogoproto.moretags) = "yaml:\"consensus_pubkey\""];
+    Description Description = 3 [(gogoproto.moretags) = "yaml:\"description\""];
+}
+
+message Description {
+    string Moniker          = 1 [(gogoproto.moretags) = "yaml:\"operator_address\""];
+    string Identity         = 2 [(gogoproto.moretags) = "yaml:\"identity\""];
+    string Website          = 3 [(gogoproto.moretags) = "yaml:\"website\""];
+    string SecurityContact  = 4 [(gogoproto.moretags) = "yaml:\"security_contact\""];
+    string Details          = 5 [(gogoproto.moretags) = "yaml:\"details\""];
+}
